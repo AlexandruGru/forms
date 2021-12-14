@@ -142,35 +142,34 @@ p {
 	animation-name: fadeOpacityIn;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 1s;
+	animation-duration: .5s;
 }
 
 @keyframes fadeOpacityIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+	0%   {transform: scale(.8); opacity: 0;}
+    80%  {transform: scale(1.05); opacity: .9;}
+	100% {transform: scale(1);opacity: 1;}
 }
 
 .nextCard {
     position: absolute;
-    margin-top: 140px;
+    margin-top: 130px;
     z-index: 9;
     animation: animateToLeft .5s forwards;
     animation-timing-function: ease-in;
 }
 @keyframes animateToLeft {
     0%   {transform: translateX(300px)}
+    80%  {transform: translateX(-20px)}
     100% {transform: translateX(0)}
 }
 
 .prevCard {
     position: absolute;
-    margin-top: 140px;
+    margin-top: 130px;
     z-index: 9;
     animation: animateToRight .5s forwards;
+    animation-timing-function: ease-in;
 }
 @keyframes animateToRight {
     0%   {transform: translateX(0); opacity: 1;}
@@ -180,9 +179,10 @@ p {
 
 .transitionToNone {
     animation: toNone .5s forwards;
+    animation-timing-function: ease-in;
 }
 @keyframes toNone {
-    0%  {transform: scale(1.2); opacity: 1;}
-    15% {transform: scale(1); opacity: .9;}
+    0%  {transform: scale(1.05); opacity: 1;}
+    30% {transform: scale(1); opacity: .9;}
     100%{transform: scale(0.8); opacity: 0;}
 }
