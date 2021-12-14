@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgb(218,160,104), rgb(197,154,202));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.firstCard {
+    width: 300px;
+    height: 340px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px;
+}
+.secondCard {
+    width: 300px;
+    height: 340px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px;
+}
+.thirdCard {
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    border-radius: 2%;
+    box-shadow: 2px 2px 5px;
+}
+.cardHeadText {
+    text-align: center;
+    height: 50px;
+}
+.input {
+    width: 79%;
+    height: 40px;
+    border-radius: 2%;
+}
+.input:focus {
+    outline: none;
+    border: 2px solid black;
+    border-radius: 2%;
+}
+h3 {
+    margin: 5px;
+}
+p {
+    margin-top: 5px;
+}
+.buttonsGroup {
+    width: 300px;
+    height: 30px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.topButton {
+    width: 20px;
+    height: 20px;
+    background: rgb(255,255,255);
+    text-align: center;
+    border-radius: 8%;
+}
+.topButtonGreen {
+    width: 20px;
+    height: 20px;
+    background: rgb(38,174,97);
+    text-align: center;
+    border-radius: 8%;
+    color: white;
+}
+.topLane {
+    height: 5px;
+    width: 120px;
+    background: rgb(255,255,255);
+}
+.topLaneGreen {
+    height: 5px;
+    width: 120px;
+    background: rgb(38,174,97);
+}
+.bottomButton {
+    width: 120px;
+    height: 40px;
+    background: rgb(38,170,95);
+    color: white;
+    margin-bottom: 30px;
+}
+.textUnderButtons {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    justify-content: space-between;
+}
+.smallText {
+    width: 120px;
+    font-size: 10px;
+    color: rgb(233,218,204);
+    text-align: center;
+}
+.none {
+    display: none !important;
+}
+.fade {
+	opacity: 1;
+	animation-name: fadeOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+.fadeIn {
+	opacity: 1;
+	animation-name: fadeOpacityIn;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeOpacityIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.nextCard {
+    position: absolute;
+    margin-top: 140px;
+    z-index: 9;
+    animation: animateToLeft .5s forwards;
+    animation-timing-function: ease-in;
+}
+@keyframes animateToLeft {
+    0%   {transform: translateX(300px)}
+    100% {transform: translateX(0)}
+}
+
+.prevCard {
+    position: absolute;
+    margin-top: 140px;
+    z-index: 9;
+    animation: animateToRight .5s forwards;
+}
+@keyframes animateToRight {
+    0%   {transform: translateX(0); opacity: 1;}
+    10%  {transform: translateX(-40px); opacity: .9;}
+    100% {transform: translateX(300px); opacity: 0;}
+}
+
+.transitionToNone {
+    animation: toNone .5s forwards;
+}
+@keyframes toNone {
+    0%  {transform: scale(1.2); opacity: 1;}
+    15% {transform: scale(1); opacity: .9;}
+    100%{transform: scale(0.8); opacity: 0;}
+}
