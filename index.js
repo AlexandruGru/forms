@@ -118,13 +118,15 @@ const checkPass = (str) => {
     }
 }
 const checkIfStrContainsNumber = (str) => {
-    for (let i = 0; i < str.length; i++) {
-        if (!isNaN(str[i])) {
-            return true
+    let result;
+    let arrFromStr = str.split('');
+    arrFromStr.forEach(elem => {
+        if (!isNaN(elem)) {
+            result = true
         }
-    }
+    })
+    return result
 }
-
 
 const emailValidation = (str) => {
     let dot = str.lastIndexOf('.');
