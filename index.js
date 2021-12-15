@@ -101,10 +101,10 @@ const checkPass = (str) => {
     if (str.length >= 8) {
         points++;
     }
-    if (str.toUpperCase() != str) {
+    if (str.toUpperCase() !== str) {
         points++
     }
-    if (str.toLowerCase() != str) {
+    if (str.toLowerCase() !== str) {
         points++;
     }
     if (checkIfStrContainsNumber(str)) {
