@@ -16,20 +16,20 @@ let next = (type) => {
         if (emailValidation(email.value)) {
             if (password.value === confirmPassword.value) {
                 if (checkPass(password.value)) {
-                    laneOne.classList.remove('topLane');
-                    laneOne.classList.add('topLaneGreen');
-                    buttonTwo.classList.remove('topButton');
-                    buttonTwo.classList.add('topButtonGreen');
+                    removeClass(laneOne, 'topLane');
+                    addClass(laneOne, 'topLaneGreen');
+                    removeClass(buttonTwo, 'topButton');
+                    addClass(buttonTwo, 'topButtonGreen');
 
                     secondCard.classList = 'secondCard';
-                    secondCard.classList.add('nextCard');
+                    addClass(secondCard, 'nextCard');
 
-                    firstCard.classList.add('fade');
-                    firstCard.classList.add('transitionToNone')
+                    addClass(firstCard, 'fade');
+                    addClass(firstCard, 'transitionToNone')
                     setTimeout(() => {
                         firstCard.classList = ' ';
-                        firstCard.classList.add('firstCard');
-                        firstCard.classList.add('none');
+                        addClass(firstCard, 'firstCard');
+                        addClass(firstCard, 'none');
                     }, 500)
                 }
                 else {
@@ -45,22 +45,22 @@ let next = (type) => {
         }
     }
     if (type === 'second') {
-        laneTwo.classList.remove('topLane');
-        laneTwo.classList.add('topLaneGreen');
-        buttonThree.classList.remove('topButton');
-        buttonThree.classList.add('topButtonGreen');
+        removeClass(laneTwo, 'topLane');
+        addClass(laneTwo, 'topLaneGreen');
+        removeClass(buttonThree, 'topButton');
+        addClass(buttonThree, 'topButtonGreen');
 
         thirdCard.classList = 'thirdCard';
-        thirdCard.classList.add('nextCard');
+        addClass(thirdCard, 'nextCard');
 
         secondCard.classList = ' ';
-        secondCard.classList.add('secondCard');
-        secondCard.classList.add('fade');
-        secondCard.classList.add('transitionToNone')
+        addClass(secondCard, 'secondCard');
+        addClass(secondCard, 'fade');
+        addClass(secondCard, 'transitionToNone')
         setTimeout(() => {
             secondCard.classList = ' ';
-            secondCard.classList.add('secondCard');
-            secondCard.classList.add('none');
+            addClass(secondCard, 'secondCard');
+            addClass(secondCard, 'none');
         }, 500)
     }
 }
@@ -68,30 +68,30 @@ let next = (type) => {
 let previous = (type) => {
     if (type === 'third') {
         laneTwo.classList.add('topLane');
-        laneTwo.classList.remove('topLaneGreen');
-        buttonThree.classList.add('topButton');
-        buttonThree.classList.remove('topButtonGreen');
+        removeClass(laneTwo, 'topLaneGreen');
+        addClass(buttonThree, 'topButton');
+        removeClass(buttonThree, 'topButtonGreen');
 
-        secondCard.classList.remove('none');
-        secondCard.classList.add('fadeIn');
+        removeClass(secondCard, 'none');
+        addClass(secondCard, 'fadeIn');
 
-        thirdCard.classList.add('prevCard');
+        addClass(thirdCard, 'prevCard');
         setTimeout(() => {
-            thirdCard.classList.add('none');
+            addClass(thirdCard, 'none');
         }, 500)
     }
     if (type === 'second') {
-        laneOne.classList.add('topLane');
-        laneOne.classList.remove('topLaneGreen');
-        buttonTwo.classList.add('topButton');
-        buttonTwo.classList.remove('topButtonGreen');
+        addClass(laneOne, 'topLane');
+        removeClass(laneOne, 'topLaneGreen');
+        addClass(buttonTwo, 'topButton');
+        removeClass(buttonTwo, 'topButtonGreen');
 
-        firstCard.classList.remove('none');
-        firstCard.classList.add('fadeIn');
+        removeClass(firstCard, 'none');
+        addClass(firstCard, 'fadeIn');
 
-        secondCard.classList.add('prevCard');
+        addClass(secondCard, 'prevCard');
         setTimeout(() => {
-            secondCard.classList.add('none');
+            addClass(secondCard, 'none');
         }, 500)
     }
 }
@@ -134,3 +134,10 @@ const emailValidation = (str) => {
     }
 }
 
+const addClass = (node, cssClass) => {
+    return node.classList.add(cssClass)
+}
+
+const removeClass = (node, cssClass) => {
+    return node.classList.remove(cssClass)
+}
