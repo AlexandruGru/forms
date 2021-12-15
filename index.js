@@ -21,13 +21,13 @@ let next = (type) => {
                     removeClass(buttonTwo, 'topButton');
                     addClass(buttonTwo, 'topButtonGreen');
 
-                    secondCard.classList = 'secondCard';
+                    setClass(secondCard, 'secondCard');
                     addClass(secondCard, 'nextCard');
 
                     addClass(firstCard, 'fade');
                     addClass(firstCard, 'transitionToNone')
                     setTimeout(() => {
-                        firstCard.classList = ' ';
+                        setClass(firstCard, ' ');
                         addClass(firstCard, 'firstCard');
                         addClass(firstCard, 'none');
                     }, 500)
@@ -50,15 +50,15 @@ let next = (type) => {
         removeClass(buttonThree, 'topButton');
         addClass(buttonThree, 'topButtonGreen');
 
-        thirdCard.classList = 'thirdCard';
+        setClass(thirdCard, 'thirdCard');
         addClass(thirdCard, 'nextCard');
 
-        secondCard.classList = ' ';
+        setClass(secondCard, ' ');
         addClass(secondCard, 'secondCard');
         addClass(secondCard, 'fade');
         addClass(secondCard, 'transitionToNone')
         setTimeout(() => {
-            secondCard.classList = ' ';
+            setClass(secondCard, ' ');
             addClass(secondCard, 'secondCard');
             addClass(secondCard, 'none');
         }, 500)
@@ -67,7 +67,7 @@ let next = (type) => {
 
 let previous = (type) => {
     if (type === 'third') {
-        laneTwo.classList.add('topLane');
+        addClass(laneTwo, 'topLane');
         removeClass(laneTwo, 'topLaneGreen');
         addClass(buttonThree, 'topButton');
         removeClass(buttonThree, 'topButtonGreen');
@@ -142,4 +142,8 @@ const addClass = (node, cssClass) => {
 
 const removeClass = (node, cssClass) => {
     return node.classList.remove(cssClass)
+}
+
+const setClass = (node, cssClass) => {
+    return node.classList = cssClass
 }
