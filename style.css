@@ -90,12 +90,12 @@ p {
     color: white;
 }
 .topLane {
-    height: 5px;
+    height: 2px;
     width: 120px;
     background: rgb(255,255,255);
 }
 .topLaneGreen {
-    height: 5px;
+    height: 2px;
     width: 120px;
     background: rgb(38,174,97);
 }

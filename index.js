@@ -13,9 +13,9 @@ let laneTwo = document.querySelector('.laneTwo');
 
 let next = (type) => {
     if (type === 'first') {
-        if (email.value.includes('@')){
+        if (emailValidation(email.value)) {
             if (password.value === confirmPassword.value) {
-                if (checkPass(password.value)){
+                if (checkPass(password.value)) {
                     laneOne.classList.remove('topLane');
                     laneOne.classList.add('topLaneGreen');
                     buttonTwo.classList.remove('topButton');
@@ -41,7 +41,7 @@ let next = (type) => {
             }
         }
         else {
-            console.log(`email doesn't contains @`)
+            console.log(`wrong email`)
         }
     }
     if (type === 'second') {
@@ -124,3 +124,13 @@ const checkIfStrContainsNumber = (str) => {
         }
     }
 }
+
+
+const emailValidation = (str) => {
+    let dot = str.lastIndexOf('.');
+    let aaron = str.indexOf('@');
+    if (dot - aaron > 2 && str.length - dot > 2) {
+        return true
+    }
+}
+
