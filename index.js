@@ -113,7 +113,7 @@ const checkIfStrContainsNumber = (str) => {
 const emailValidation = (str) => {
     let dot = str.lastIndexOf('.');
     let aaron = str.indexOf('@');
-    if (dot - aaron > 2 && str.length - dot > 2) {
+    if (dot - aaron > 2 && str.length - dot > 2 && aaron > 2) {
         return true
     }
 }
