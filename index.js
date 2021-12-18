@@ -100,14 +100,8 @@ const checkPass = (str) => {
     return str.length >= 8 && str.toUpperCase() !== str && str.toLowerCase() !== str && checkIfStrContainsNumber(str)
 }
 const checkIfStrContainsNumber = (str) => {
-    let result;
-    let arrFromStr = str.split('');
-    arrFromStr.forEach(elem => {
-        if (!isNaN(elem)) {
-            result = true
-        }
-    })
-    return result
+    let arrFromStr = str.split('').find(elem => !isNaN(+elem))
+    return arrFromStr
 }
 
 const emailValidation = (str) => {
