@@ -97,25 +97,7 @@ let previous = (type) => {
 }
 
 const checkPass = (str) => {
-    let points = 0;
-    if (str.length >= 8) {
-        points++;
-    }
-    if (str.toUpperCase() !== str) {
-        points++
-    }
-    if (str.toLowerCase() !== str) {
-        points++;
-    }
-    if (checkIfStrContainsNumber(str)) {
-        points++;
-    }
-    if (points >= 4) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return str.length >= 8 && str.toUpperCase() !== str && str.toLowerCase() !== str && checkIfStrContainsNumber(str)
 }
 const checkIfStrContainsNumber = (str) => {
     let result;
